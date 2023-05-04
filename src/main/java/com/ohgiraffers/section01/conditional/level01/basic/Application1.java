@@ -24,11 +24,7 @@ public class Application1 {
 		}
 		else {
 			System.out.println("양수가 아니다.");
-
 		}
-
-
-
 	}
 
 }
