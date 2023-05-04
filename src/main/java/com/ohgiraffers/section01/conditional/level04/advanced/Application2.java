@@ -1,10 +1,10 @@
 package com.ohgiraffers.section01.conditional.level04.advanced;
-
+import java.util.Scanner;
 public class Application2 {
 
 	public static void main(String[] args) {
-		
-		/* 영업사원의 월급을 계산하는 프로그램을 작성하려고 합니다. 
+
+		/* 영업사원의 월급을 계산하는 프로그램을 작성하려고 합니다.
 		 * 월 급여액과 월 매출액을 입력 받아 급여를 산정합니다.
 		 * 영업사원은 매출액 대비 보너스율에 명시된 보너스를 급여 외에 추가로 지급받습니다.
 		 * 
@@ -12,7 +12,7 @@ public class Application2 {
 		 * 계산된 보너스 금액을 월 급여액에 더하여 총 급여를 계산한다.
 		 * 
 		 * 보너스율을 적용하여 출력 예시처럼 출력되도록 프로그램을 만들어보세요
-		 * 
+		 *
 		 * -- 총 급여 계산식 --
 		 * 총 급여 = 월 급여  + (매출액 * 보너스율)
 		 * 
@@ -36,7 +36,51 @@ public class Application2 {
 		 * ======================
 		 * 총 급여 : 3200000
 		 * */
-		
+		Scanner sc = new Scanner(System.in);            //스캐너객체생성
+
+		System.out.print("월 급여 입력 : ");
+		int salary = sc.nextInt();                //보너스를 제외한 월 수령액 입력
+		System.out.print("매출액 입력 : ");
+		int bonus = sc.nextInt();                //매출액 입력
+		int bonusmoney;                            //보너스 금액 변수 선언
+
+		if(bonus>50000000){						//매출액 5천만원 이상 총 급여 계산
+			bonusmoney = bonus/100*5;
+			System.out.println("==========================");
+			System.out.println("매출액 : " + bonus);
+			System.out.println("보너스율 : 5%");
+			System.out.println("월 급여 : " + salary);
+			System.out.println("보너스 금액 : " + bonusmoney);
+			System.out.println("===========================");
+			System.out.println("총 급여 : " + (salary + bonusmoney));
+		}else if(bonus>30000000){				//매출액 3천만원 이상 총 급여 계산
+			bonusmoney = bonus/100*3;
+			System.out.println("==========================");
+			System.out.println("매출액 : " + bonus);
+			System.out.println("보너스율 : 3%");
+			System.out.println("월 급여 : " + salary);
+			System.out.println("보너스 금액 : " + bonusmoney);
+			System.out.println("===========================");
+			System.out.println("총 급여 : " + (salary + bonusmoney));
+		} else if (bonus>10000000) {			//매출액 1천만원 이상 총 급여 계산
+			bonusmoney = bonus/100;
+			System.out.println("==========================");
+			System.out.println("매출액 : " + bonus);
+			System.out.println("보너스율 : 1%");
+			System.out.println("월 급여 : " + salary);
+			System.out.println("보너스 금액 : " + bonusmoney);
+			System.out.println("===========================");
+			System.out.println("총 급여 : " + (salary + bonusmoney));
+		}else{									//매출액 1천만원 미만 총 급여 계산
+			System.out.println("==========================");
+			System.out.println("매출액 : " + bonus);
+			System.out.println("보너스율 : 0%");
+			System.out.println("월 급여 : " + salary);
+			System.out.println("보너스 금액 : 0" );
+			System.out.println("===========================");
+			System.out.println("총 급여 : " + salary);
+		}
+
 	}
 
 }

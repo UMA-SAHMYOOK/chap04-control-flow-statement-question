@@ -1,10 +1,11 @@
 package com.ohgiraffers.section01.conditional.level03.hard;
-
+import java.awt.*;
+import java.util.Scanner;
 public class Application2 {
 
 	public static void main(String[] args) {
-		
-		/* 과일 이름("사과", "바나나", "복숭아", "키위") 중 한 가지를 문자열로 입려하면 
+
+		/* 과일 이름("사과", "바나나", "복숭아", "키위") 중 한 가지를 문자열로 입려하면
 		 * 해당하는 가격에 맞게 상품명과 가격이 출력되게 하세요.
 		 * 단, 목록에 없는 과일을 입력 시 "준비된 상품이 없습니다." 출력 후 프로그램 종료
 		 * 
@@ -16,11 +17,30 @@ public class Application2 {
 		 * 
 		 * -- 입력 예시 --
 		 * 과일 이름을 입력하세요 : 바나나
-		 * 
+		 *
 		 * -- 출력 예시 --
 		 * 바나나의 가격은 3000원 입니다.
 		 * */
-		
+		Scanner sc = new Scanner(System.in);			//스캐너 생성
+		System.out.print("과일 이름을 입력하세요 : ");
+		String fruit = sc.nextLine();			//사용자가 입력한 값 변수에 초기화
+
+		switch (fruit){
+			case "사과" :
+				System.out.println("사과의 가격은 1000원 입니다.");		//사용자가 입력한 값이 "사과" 일경우 출력
+				break;
+			case "바나나":
+				System.out.println("바나나의 가격은 3000원 입니다.");	//사용자가 입력한 값이 "바나나" 일경우 출력
+				break;
+			case "복숭아" :
+				System.out.println("복숭아의 가격은 2000원 입니다.");	//사용자가 입력한 값이 "복숭아" 일경우 출력
+				break;
+			case "키위" :
+				System.out.println("키위의 가격은 5000원 입니다.");		//사용자가 입력한 값이 "키위" 일경우 출력
+				break;
+			default:
+				System.out.println("준비된 상품이 없습니다.");		//switch문에 사용자가 입력한 과일이 없을 경우 출력
+		}
 	}
 
 }

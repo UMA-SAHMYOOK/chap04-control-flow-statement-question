@@ -1,9 +1,9 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
-
+import java.util.Scanner;
 public class Application3 {
 
 	public static void main(String[] args) {
-		
+
 		/* 문자열을 하나 입력 받고, 검색할 문자를 입력 하여
 		 * 입력받은 문자열에서 검색할 문자가 몇 개 포함되어 있는지를 출력하는 프로그램을 만드세요
 		 * 
@@ -30,7 +30,24 @@ public class Application3 {
 		 * -- 출력 예시 --
 		 * 영문자가 아닌 문자가 포함되어 있습니다.
 		 * */
-		
+		Scanner sc = new Scanner(System.in);        //스캐너 객체 생성
+		System.out.print("문자열 입력 : ");
+		String str = sc.nextLine();                    //str변수 초기화
+		System.out.print("문자 입력 : ");
+		String abc = sc.nextLine();
+		char str2 = abc.charAt(0);
+		int count = 0;                                 //포함된 갯수를 누적시킬 변수 초기화
+
+		for(int i= 0;i<str.length();i++){
+			if((str.charAt(i)>90 && str.charAt(i)<97 ) || str.charAt(i)<65 || str.charAt(i)>122){
+				System.out.println("영문자가 아닌 문자가 포함되어 있습니다. ");
+				break;
+			}
+			if(str.charAt(i)==str2) count++;
+		}
+
+		System.out.println("포함된 객수 : " + count +"개");
+
 	}
 
 }
