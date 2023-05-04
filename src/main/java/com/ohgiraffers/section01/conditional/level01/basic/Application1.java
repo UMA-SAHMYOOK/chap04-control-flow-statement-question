@@ -20,7 +20,7 @@ public class Application1 {
 		int num = sc.nextInt();
 		System.out.println(num);
 		if (num > 0 ){
-			System.out.println("양수다.");
+			System.out.println("양수다..");
 		}
 		else {
 			System.out.println("양수가 아니다.");
