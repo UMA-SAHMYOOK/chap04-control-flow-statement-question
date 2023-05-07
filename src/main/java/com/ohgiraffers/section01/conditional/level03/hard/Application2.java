@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.conditional.level03.hard;
 
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
@@ -20,7 +22,16 @@ public class Application2 {
 		 * -- 출력 예시 --
 		 * 바나나의 가격은 3000원 입니다.
 		 * */
-		
+		String[] fruits = {"사과", "바나나", "복숭아", "키위"};
+		int[] price = {1000, 3000, 2000, 5000};
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("과일 이름을 입력하세요 : ");
+		String i = sc.next();
+
+
+
 	}
 
 }
