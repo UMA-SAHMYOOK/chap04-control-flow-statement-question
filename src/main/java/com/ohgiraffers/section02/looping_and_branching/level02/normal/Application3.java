@@ -28,7 +28,6 @@ public class Application3 {
 			}
 		}
 		System.out.println(subak);
-
 	}
 
 }
